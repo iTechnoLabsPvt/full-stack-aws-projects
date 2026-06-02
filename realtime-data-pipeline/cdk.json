@@ -1,0 +1,23 @@
+{
+  "app": "python infrastructure/app.py",
+  "watch": {
+    "include": [
+      "infrastructure/**/*.py",
+      "src/**/*.py"
+    ],
+    "exclude": [
+      "tests/**",
+      "*.pyc",
+      "__pycache__"
+    ]
+  },
+  "context": {
+    "@aws-cdk/core:enableStackNameDuplicates": "true",
+    "@aws-cdk/core:stackRelativeExports": "true",
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:target-partitions": [
+      "aws",
+      "aws-cn"
+    ]
+  }
+}
